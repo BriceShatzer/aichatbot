@@ -1,4 +1,5 @@
 import { type Message } from 'ai'
+import type {User} from "@stytch/vanilla-js";
 
 export interface Chat extends Record<string, any> {
   id: string
@@ -16,3 +17,13 @@ export type ServerActionResult<Result> = Promise<
       error: string
     }
 >
+
+export type SWRUser = {
+  user: null;
+  fromCache: false;
+  isInitialized: false;
+} | {
+  user: User | null;
+  fromCache: boolean;
+  isInitialized: true;
+};

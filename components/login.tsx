@@ -4,6 +4,17 @@ import React from "react";
 import { StytchLogin } from "@stytch/nextjs";
 import { Products } from "@stytch/vanilla-js";
 import {OAuthProviders} from '@stytch/vanilla-js';
+import type {User} from "@stytch/vanilla-js";
+
+type SWRUser = {
+  user: null;
+  fromCache: false;
+  isInitialized: false;
+} | {
+  user: User | null;
+  fromCache: boolean;
+  isInitialized: true;
+};
 
 const Login = () => {
   const styles = {
